@@ -80,35 +80,35 @@ kubectl apply -f k8s/service.yaml
 kubectl apply -f k8s/hpa.yaml
 
 
-Port-forward to access app
+## Port-forward to access app
 
 kubectl port-forward svc/simple-k8s 8080:80
-## open http://localhost:8000
+open http://localhost:8000
 
 
 Test in a separate terminal
 
 curl http://localhost:8000
-# Example response:
-# {"message":"Hello from simple-k8s-app","pod":"simple-k8s-7cbd54f7bf-b5p8x","version":"v1"}
+## Example response:
+ {"message":"Hello from simple-k8s-app","pod":"simple-k8s-7cbd54f7bf-b5p8x","version":"v1"}
 
-Alternative: Run with Minikube
+## Alternative: Run with Minikube
 
 If you prefer Minikube and have Docker Desktop or a VM driver:
 
-Start minikube with Docker driver (WSL users require Docker Desktop)
+## Start minikube with Docker driver (WSL users require Docker Desktop)
 
 minikube start --driver=docker
 
 
-Build the image inside Minikube’s Docker daemon so it doesn’t need a registry:
+## Build the image inside Minikube’s Docker daemon so it doesn’t need a registry:
 
 eval $(minikube docker-env)
 docker build -t simple-k8s-app:1.0 .
-# revert env if needed: eval $(minikube docker-env -u)
+## revert env if needed: eval $(minikube docker-env -u)
 
 
-Apply manifests and access:
+## Apply manifests and access:
 
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
@@ -131,8 +131,6 @@ kubectl get svc simple-k8s
 kubectl describe deployment simple-k8s
 
 5. Access the app
-
 Port-forward (recommended for local testing):
-
 kubectl port-forward svc/simple-k8s 8000:80
-# then open http://localhost:8000
+## then open http://localhost:8000
