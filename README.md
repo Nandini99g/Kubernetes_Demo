@@ -76,7 +76,7 @@ Apply Kubernetes manifests
 
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
-# optional:
+## optional:
 kubectl apply -f k8s/hpa.yaml
 
 
