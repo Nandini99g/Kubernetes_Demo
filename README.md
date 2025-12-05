@@ -1,8 +1,8 @@
-Simple K8s Web App 
+# Simple K8s Web App 
 
 A tiny, hands-on project to learn Kubernetes by deploying a minimal Node.js web app in containers. This README walks you step-by-step from code → Docker → local Kubernetes cluster (kind or Minikube) → verify and practice common Kubernetes operations.
 
-Table of contents
+## Table of contents
 
 Project overview
 Repository structure
@@ -15,13 +15,13 @@ Advanced exercises (next steps)
 Troubleshooting tips
 License & notes
 
-Project overview
+## Project overview
 
 This project contains:
 
-@@ A tiny Node.js HTTP app (app.js) that replies with a JSON payload including the handling pod name and version,
-@@ A minimal Dockerfile,
-@@ Kubernetes manifests (k8s/) for Deployment, Service, and optional HorizontalPodAutoscaler (HPA).
+--> A tiny Node.js HTTP app (app.js) that replies with a JSON payload including the handling pod name and version,
+--> A minimal Dockerfile,
+--> Kubernetes manifests (k8s/) for Deployment, Service, and optional HorizontalPodAutoscaler (HPA).
 
 Goal: practice deploying, scaling, updating, and debugging an app in Kubernetes.
 
@@ -39,38 +39,34 @@ Prerequisites
 
 Install the following on your development machine (choose one local cluster: kind or Minikube):
 
-@@ Node.js (18+ or 20+) — run app locally and build image
+--> Node.js (18+ or 20+) — run app locally and build image
 Check: node -v
 
-@@ Docker (Docker Desktop on Windows/macOS or Docker Engine on Linux)
+--> Docker (Docker Desktop on Windows/macOS or Docker Engine on Linux)
 Check: docker --version
 
-@@ kubectl — Kubernetes CLI
+--> kubectl — Kubernetes CLI
 Check: kubectl version --client
 
-@@ kind (recommended for WSL users) or Minikube
-@kind: kind --version
-@minikube: minikube version
+--> kind (recommended for WSL users) or Minikube
+--->kind: kind --version
+--->minikube: minikube version
 
-Optional but recommended:
-
-@VS Code with Kubernetes extension (ms-kubernetes-tools.vscode-kubernetes-tools)
-
-@curl for testing endpoints
+-->curl for testing endpoints
 
 WSL notes: If using WSL on Windows, prefer kind (runs inside Docker) or configure Minikube to use the Docker driver and enable Docker Desktop WSL integration.
 
-Quick start (recommended: kind)
+## Quick start (recommended: kind)
 
-These commands assume you are in the project root.
+-->These commands assume you are in the project root.
 
 Create a kind cluster
 
-# install kind if not already installed (see prerequisites)
+## install kind if not already installed (see prerequisites)
 kind create cluster
 
 
-Build Docker image and load into kind
+## Build Docker image and load into kind
 
 docker build -t simple-k8s-app:1.0 .
 kind load docker-image simple-k8s-app:1.0
@@ -87,7 +83,7 @@ kubectl apply -f k8s/hpa.yaml
 Port-forward to access app
 
 kubectl port-forward svc/simple-k8s 8080:80
-# open http://localhost:8000
+## open http://localhost:8000
 
 
 Test in a separate terminal
