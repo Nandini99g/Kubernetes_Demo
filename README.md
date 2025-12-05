@@ -133,4 +133,4 @@ kubectl describe deployment simple-k8s
 5. Access the app
 Port-forward (recommended for local testing):
 kubectl port-forward svc/simple-k8s 8000:80
-## then open http://localhost:8000
+then open http://localhost:8000
