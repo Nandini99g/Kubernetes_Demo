@@ -5,10 +5,15 @@ A tiny, hands-on project to learn Kubernetes by deploying a minimal Node.js web 
 ## Table of contents
 
 Project overview
+
 Repository structure
+
 Prerequisites
+
 Quick start (recommended: kind)
+
 Alternative: Run with Minikube
+
 Build, deploy, and verify (detailed)
 Useful kubectl commands & examples
 Advanced exercises (next steps)
