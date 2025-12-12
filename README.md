@@ -15,9 +15,13 @@ Quick start (recommended: kind)
 Alternative: Run with Minikube
 
 Build, deploy, and verify (detailed)
+
 Useful kubectl commands & examples
+
 Advanced exercises (next steps)
+
 Troubleshooting tips
+
 License & notes
 
 ## Project overview
